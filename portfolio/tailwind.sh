@@ -1,0 +1,1 @@
+./node_modules/.bin/tailwindcss -i ./src/style.css -o ./dist/output.css
