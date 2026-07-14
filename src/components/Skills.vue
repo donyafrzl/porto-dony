@@ -14,7 +14,10 @@ const filteredSkills = computed(() => {
 </script>
 
 <template>
-  <section id="skills" class="py-20 px-4 bg-white">
+  <section
+    id="skills"
+    class="py-20 px-4 bg-white"
+  >
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
         Skills & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Technologies</span>
@@ -29,7 +32,7 @@ const filteredSkills = computed(() => {
           type="text"
           placeholder="Search skills..."
           class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
-        />
+        >
       </div>
 
       <div class="flex flex-wrap justify-center gap-3">
