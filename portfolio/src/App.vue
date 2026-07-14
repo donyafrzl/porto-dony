@@ -10,6 +10,7 @@ import Education from './components/Education.vue'
 const activeSection = ref('about')
 const menuOpen = ref(false)
 
+// Inisialisasi item navigasi
 const navItems = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
