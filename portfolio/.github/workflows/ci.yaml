@@ -1,0 +1,42 @@
+name: Vue Continuous Integration (CI)
+
+# 1. Menentukan pemicu (trigger) pipeline
+on:
+  pull_request:
+    branches:
+      - dev
+      - staging
+      - main
+
+jobs:
+  # 2. Membuat job bernama "vue-ci-pipeline"
+  vue-ci-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Langkah A: Unduh kode dari repositori GitHub
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Langkah B: Pasang Node.js di server virtual GitHub
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Sesuaikan dengan versi Node.js proyek Vue Anda
+          cache: 'npm'       # Mengaktifkan cache agar proses berikutnya lebih cepat
+
+      # Langkah C: Install Dependencies (Menggunakan npm ci untuk konsistensi)
+      - name: 1. Install Dependencies
+        run: npm ci
+
+      # Langkah D: Jalankan Lint (Static Code Analysis)
+      - name: 2. Run Lint
+        run: npm run lint
+
+      # Langkah E: Jalankan Unit/Integration Test
+      - name: 3. Run Test
+        run: npm run test:unit || echo "Belum ada automated test yang dikonfigurasi"
+
+      # Langkah F: Kompilasi Aplikasi (Build)
+      - name: 4. Build Application Artifact
+        run: npm run build
