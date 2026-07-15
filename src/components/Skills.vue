@@ -26,7 +26,7 @@ const filteredSkills = computed(() => {
         Tools and technologies I've worked with
       </p>
       
-      <div class="max-w-md mx-auto mb-10">
+      <!-- <div class="max-w-md mx-auto mb-10">
         <input
           v-model="filterSkill"
           type="text"
@@ -43,7 +43,7 @@ const filteredSkills = computed(() => {
         >
           {{ skill }}
         </span>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
