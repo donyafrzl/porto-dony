@@ -20,8 +20,8 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 22
           script: |
-            mkdir -p /app/portfolio-vue-dev
-            cd /app/portfolio-vue-dev
+            mkdir -p /home/devopsdony/portfolio-vue-dev
+            cd /home/devopsdony/portfolio-vue-dev
 
             # Ambil kode branch development
             if [ ! -d ".git" ]; then
