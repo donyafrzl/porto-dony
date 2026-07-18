@@ -16,12 +16,12 @@ export const experiences = [
     period: "08/2026 - Present",
     points: [
       "Established Quality Engineering standards and QA strategies, including comprehensive Test Plans, SOPs, and Release Checklists.",
-      "Led Functional, Regression, API, and End-to-End testing for web and mobile platforms.",
+      "Led Functional, Regression, API, End-to-End, and Security testing across web and mobile platforms.",
       "Developed and integrated automation testing frameworks and leveraged AI-assisted tools to improve test coverage and productivity.",
-      "Collaborated on DevSecOps initiatives, including CI/CD pipelines, Quality Gates, and vulnerability assessments.",
-      "Monitored production stability and performed root-cause analysis to ensure high platform reliability."
+      "Owned DevSecOps pipeline implementation, including CI/CD, Quality Gates, security reviews, and vulnerability assessments.",
+      "Monitored production stability, performed root-cause analysis, and ensured high platform reliability and security compliance."
     ],
-    tech: ["Docker", "CI/CD", "Cloudflare", "Linux", "Git"]
+    tech: ["Docker", "CI/CD", "Cloudflare", "Linux", "Git", "OWASP", "Security Testing"]
   },
   {
     role: "Quality Engineer",
@@ -155,5 +155,5 @@ export const skills = [
   "CI/CD", "Data Layer Validation", "Cross-functional Collaboration",
   "Postman", "JIRA", "Azure", "Robot Framework", "Python",
   "Cypress", "Mixpanel", "Chartbeat", "Git", "Jenkins",
-  "Docker", "Linux", "DevSecOps"
+  "Docker", "Linux", "DevSecOps", "Performance Testing", "Security Testing", "OWASP"
 ]
