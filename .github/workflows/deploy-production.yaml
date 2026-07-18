@@ -32,12 +32,19 @@ jobs:
               git reset --hard origin/main
             fi
 
-            # 3. Build menggunakan Docker CLI
+            # Build menggunakan Docker CLI
             docker build -t vue-portfolio:production .
-            
-            # 4. Hentikan container lama jika ada (abaikan jika error/tidak ada)
+
+            # Hentikan & hapus container lama jika ada
             docker stop vue-app-production || true
             docker rm vue-app-production || true
 
-            # 5. Jalankan container baru di port 80
-            docker run -d --name vue-app-production -p 80:80 vue-portfolio:production
+            # Hapus image lama yang menumpuk agar memori VPS tidak penuh
+            docker image prune -f
+
+            # Jalankan container baru di port 8000 (Localhost Only)
+            docker run -d \
+            --name vue-app-production \
+            -p 127.0.0.1:8000:80 \
+            --restart always \
+            vue-portfolio:production

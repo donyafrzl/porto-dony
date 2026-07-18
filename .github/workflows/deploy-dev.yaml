@@ -35,4 +35,5 @@ jobs:
             docker build -t vue-portfolio:development .
             docker stop vue-app-development || true
             docker rm vue-app-development || true
-            docker run -d --name vue-app-development -p 8080:80 vue-portfolio:development
+            docker image prune -f
+            docker run -d --name vue-app-development -p 127.0.0.1:8080:80 --restart always vue-portfolio:development
