@@ -11,9 +11,22 @@ export const personal = {
 
 export const experiences = [
   {
+    role: "Senior Quality Assurance (QA) Engineer",
+    company: "Artifisial Generatif Indonesia",
+    period: "08/2026 - Present",
+    points: [
+      "Established Quality Engineering standards and QA strategies, including comprehensive Test Plans, SOPs, and Release Checklists.",
+      "Led Functional, Regression, API, End-to-End, and Security testing across web and mobile platforms.",
+      "Developed and integrated automation testing frameworks and leveraged AI-assisted tools to improve test coverage and productivity.",
+      "Owned DevSecOps pipeline implementation, including CI/CD, Quality Gates, security reviews, and vulnerability assessments.",
+      "Monitored production stability, performed root-cause analysis, and ensured high platform reliability and security compliance."
+    ],
+    tech: ["Docker", "CI/CD", "Cloudflare", "Linux", "Git", "OWASP", "Security Testing"]
+  },
+  {
     role: "Quality Engineer",
     company: "Kompas.id",
-    period: "03/2024 - Present",
+    period: "03/2024 - 08/2026",
     points: [
       "Led quality assurance activities across multiple digital products, ensuring reliable and seamless user experiences for web and mobile platforms.",
       "Actively validated critical business domains including Membership, Subscription, Checkout, Payment, Order Management, and backend services.",
@@ -141,5 +154,6 @@ export const skills = [
   "Integration Testing", "User Acceptance Testing", "Automation Testing",
   "CI/CD", "Data Layer Validation", "Cross-functional Collaboration",
   "Postman", "JIRA", "Azure", "Robot Framework", "Python",
-  "Cypress", "Mixpanel", "Chartbeat", "Git", "Jenkins"
+  "Cypress", "Mixpanel", "Chartbeat", "Git", "Jenkins",
+  "Docker", "Linux", "DevSecOps", "Performance Testing", "Security Testing", "OWASP"
 ]
