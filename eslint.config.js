@@ -13,7 +13,8 @@ export default [
         document: 'readonly',
         window: 'readonly',
         navigator: 'readonly',
-        location: 'readonly'
+        location: 'readonly',
+        localStorage: 'readonly'
       }
     }
   },

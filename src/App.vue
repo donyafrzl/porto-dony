@@ -1,6 +1,6 @@
 <script setup>
 import { personal, experiences, projectCategories, educations, organizations, skills } from './data.js'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Hero from './components/Hero.vue'
 import Experience from './components/Experience.vue'
 import Projects from './components/Projects.vue'
@@ -9,6 +9,7 @@ import Education from './components/Education.vue'
 
 const activeSection = ref('about')
 const menuOpen = ref(false)
+const isDark = ref(false)
 
 // Inisialisasi item navigasi
 const navItems = [
@@ -24,34 +25,91 @@ function scrollTo(id) {
   menuOpen.value = false
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
+
+function toggleDarkMode() {
+  isDark.value = !isDark.value
+  if (isDark.value) {
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+    localStorage.setItem('theme', 'light')
+  }
+}
+
+onMounted(() => {
+  isDark.value = document.documentElement.classList.contains('dark')
+})
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-700">
       <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="font-bold text-xl text-slate-800">
+        <div class="font-bold text-xl text-slate-800 dark:text-slate-100">
           {{ personal.name }}
         </div>
-        <button
-          class="md:hidden p-2 text-slate-600 hover:text-slate-900"
-          @click="menuOpen = !menuOpen"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <div class="flex items-center gap-2">
+          <!-- Dark mode toggle -->
+          <button
+            class="p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
+            @click="toggleDarkMode"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+            <!-- Sun icon (shown in dark mode) -->
+            <svg
+              v-if="isDark"
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <!-- Moon icon (shown in light mode) -->
+            <svg
+              v-else
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
+          
+          <!-- Mobile menu button -->
+          <button
+            class="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
+            @click="menuOpen = !menuOpen"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Desktop nav -->
         <div class="hidden md:flex gap-1">
           <button
             v-for="item in navItems"
@@ -60,7 +118,7 @@ function scrollTo(id) {
               'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
               activeSection === item.id
                 ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
-                : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-slate-100'
             ]"
             @click="scrollTo(item.id)"
           >
@@ -68,10 +126,11 @@ function scrollTo(id) {
           </button>
         </div>
       </div>
+      
       <!-- Mobile menu -->
       <div
         v-if="menuOpen"
-        class="md:hidden bg-white border-t border-slate-200 px-4 py-2"
+        class="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 px-4 py-2"
       >
         <button
           v-for="item in navItems"
@@ -80,7 +139,7 @@ function scrollTo(id) {
             'block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all',
             activeSection === item.id
               ? 'bg-blue-600 text-white'
-              : 'text-slate-600 hover:bg-slate-100'
+              : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
           ]"
           @click="scrollTo(item.id)"
         >
@@ -99,7 +158,7 @@ function scrollTo(id) {
     />
 
     <!-- Footer -->
-    <footer class="py-12 px-4 bg-slate-900 text-white">
+    <footer class="py-12 px-4 bg-slate-900 dark:bg-black text-white">
       <div class="max-w-6xl mx-auto text-center">
         <div class="text-2xl font-bold mb-4">
           {{ personal.name }}

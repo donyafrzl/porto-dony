@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply antialiased text-gray-700 bg-white;
+    @apply antialiased text-gray-700 bg-white dark:text-gray-300 dark:bg-gray-900;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
