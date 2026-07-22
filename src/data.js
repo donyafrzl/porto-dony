@@ -6,22 +6,22 @@ export const personal = {
   phone: "087800129226",
   location: "Tangerang, 15132",
   linkedin: "https://www.linkedin.com/in/donyafrizal/",
-  summary: "QA Engineer with 2+ years of experience in web and mobile application testing. Skilled in test case development, regression testing, bug tracking, and cross-functional collaboration."
+  summary: "Software Quality Assurance Engineer with 2+ years of experience in web and mobile testing, test case development, and test automation. Experienced in validating critical business domains such as Payment, Subscription, Checkout, and internal back-office platforms."
 }
 
 export const experiences = [
   {
-    role: "Senior Quality Assurance (QA) Engineer",
+    role: "QA  & DevSecOps Engineer",
     company: "Artifisial Generatif Indonesia",
     period: "08/2026 - Present",
-    points: [
-      "Established Quality Engineering standards and QA strategies, including comprehensive Test Plans, SOPs, and Release Checklists.",
-      "Led Functional, Regression, API, End-to-End, and Security testing across web and mobile platforms.",
-      "Developed and integrated automation testing frameworks and leveraged AI-assisted tools to improve test coverage and productivity.",
-      "Owned DevSecOps pipeline implementation, including CI/CD, Quality Gates, security reviews, and vulnerability assessments.",
-      "Monitored production stability, performed root-cause analysis, and ensured high platform reliability and security compliance."
-    ],
-    tech: ["Docker", "CI/CD", "Cloudflare", "Linux", "Git", "OWASP", "Security Testing"]
+    // points: [
+    //   "Established Quality Engineering standards and QA strategies, including comprehensive Test Plans, SOPs, and Release Checklists.",
+    //   "Led Functional, Regression, API, End-to-End, and Security testing across web and mobile platforms.",
+    //   "Developed and integrated automation testing frameworks and leveraged AI-assisted tools to improve test coverage and productivity.",
+    //   "Owned DevSecOps pipeline implementation, including CI/CD, Quality Gates, security reviews, and vulnerability assessments.",
+    //   "Monitored production stability, performed root-cause analysis, and ensured high platform reliability and security compliance."
+    // ],
+    tech: ["Docker", "CI/CD", "Cloudflare", "Linux", "Git"]
   },
   {
     role: "Quality Engineer",
@@ -130,9 +130,9 @@ export const projectCategories = [
     projects: [
       "Support Site 'Halaman Sukses' Redesign",
       "Help Button Component Integration",
-      "Flexible 'Price Coret' (Strikethrough Pricing) Scenarios",
+      "Flexible Price (Strikethrough Pricing) Scenarios",
       "Introductory Price to Auto-Renewal Transition Handling",
-      "KDP and 'Koran' Checkout Page Migration to Nuxt 3",
+      "Checkout Page Migration to Nuxt 3",
       "Purchase Token Deletion via Subscription Service API"
     ]
   }

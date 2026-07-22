@@ -12,16 +12,16 @@ const props = defineProps({
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col md:flex-row items-center gap-12">
         <div class="flex-1 text-center md:text-left">
-          <div class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+          <div class="inline-block px-4 py-1.5 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-4">
             Available for opportunities
           </div>
-          <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-4">
+          <h1 class="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-4">
             Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">{{ personal.name }}</span>
           </h1>
-          <p class="text-2xl text-slate-600 mb-6">
+          <p class="text-2xl text-slate-600 dark:text-slate-300 mb-6">
             {{ personal.title }}
           </p>
-          <p class="text-lg text-slate-500 mb-8 max-w-xl">
+          <p class="text-lg text-slate-500 dark:text-slate-400 mb-8 max-w-xl">
             {{ personal.summary }}
           </p>
           <div class="flex flex-wrap gap-4 justify-center md:justify-start">
@@ -39,7 +39,7 @@ const props = defineProps({
             </a>
             <a
               :href="'mailto:' + personal.email"
-              class="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-700 rounded-xl font-medium border-2 border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all hover:shadow-lg hover:-translate-y-0.5"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl font-medium border-2 border-slate-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               <svg
                 class="w-5 h-5"
@@ -58,9 +58,7 @@ const props = defineProps({
         </div>
         <div class="flex-shrink-0">
           <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
-            <div class="w-full h-full rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-              <span class="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-purple-600">DA</span>
-            </div>
+            <img src="../assets/dony-foto.jpeg" alt="Dony" class="w-full h-full rounded-full object-cover" />
           </div>
         </div>
       </div>

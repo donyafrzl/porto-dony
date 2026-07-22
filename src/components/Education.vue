@@ -8,17 +8,17 @@ const props = defineProps({
 <template>
   <section
     id="education"
-    class="py-20 px-4 bg-gradient-to-br from-slate-50 to-slate-100"
+    class="py-20 px-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900"
   >
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12 text-center">
         Education & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Organizations</span>
       </h2>
       
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Education -->
         <div>
-          <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
             <svg
               class="w-6 h-6 text-blue-600"
               fill="none"
@@ -41,15 +41,15 @@ const props = defineProps({
             <div
               v-for="(edu, index) in educations"
               :key="index"
-              class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg hover:border-blue-200 transition-all"
+              class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:border-blue-200 dark:hover:border-blue-500 transition-all"
             >
-              <h4 class="font-bold text-slate-900">
+              <h4 class="font-bold text-slate-900 dark:text-white">
                 {{ edu.degree }}
               </h4>
-              <p class="text-blue-600">
+              <p class="text-blue-600 dark:text-blue-400">
                 {{ edu.school }}
               </p>
-              <p class="text-slate-500 text-sm mt-1">
+              <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">
                 {{ edu.period }}
               </p>
             </div>
@@ -58,7 +58,7 @@ const props = defineProps({
 
         <!-- Organizations -->
         <div>
-          <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
             <svg
               class="w-6 h-6 text-purple-600"
               fill="none"
@@ -76,15 +76,15 @@ const props = defineProps({
             <div
               v-for="(org, index) in organizations"
               :key="index"
-              class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg hover:border-purple-200 transition-all"
+              class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:border-purple-200 dark:hover:border-purple-500 transition-all"
             >
-              <h4 class="font-bold text-slate-900">
+              <h4 class="font-bold text-slate-900 dark:text-white">
                 {{ org.role }}
               </h4>
-              <p class="text-purple-600">
+              <p class="text-purple-600 dark:text-purple-400">
                 {{ org.org }}
               </p>
-              <p class="text-slate-500 text-sm mt-1">
+              <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">
                 {{ org.period }}
               </p>
             </div>
